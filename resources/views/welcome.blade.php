@@ -1,3 +1,3 @@
-@extends('Header')
+@extends('Includes.Header')
 
-@extends('Footer')
+@extends('Includes.Footer')

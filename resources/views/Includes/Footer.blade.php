@@ -72,13 +72,7 @@
                 <div class="single_footer_part">
                     <h4>Category</h4>
                     <ul class="list-unstyled">
-                        <?php
-                        $Q = "SELECT * FROM bigcat where bigcat_sta='1'";
-                        $res = mysqli_query($connect, $Q);
-                        while ($CT = $res->fetch_assoc()) {
-                            echo "<li><a href='category.php?C={$CT['bigcat_id']}'>{$CT['bigcat_name']}</a></li>";
-                        }
-                        ?>
+                        <li><a href='category.php'></a></li>
                     </ul>
                 </div>
             </div>
@@ -120,9 +114,8 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i
-                            class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                            target="_blank">Colorlib</a>
+                        </script> All rights reserved | This template is made with <i class="ti-heart"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </P>
                 </div>
