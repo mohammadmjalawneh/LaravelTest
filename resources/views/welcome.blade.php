@@ -1,9 +1,3 @@
 @extends('Header')
 
-
-
-
-
-
-
 @extends('Footer')
