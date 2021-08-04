@@ -18,7 +18,7 @@ class Bigcat extends Migration
             $table->string('bigcat_name',100);
             $table->string('bigcat_img',100);
             $table->boolean('bigcat_sta');
-            $table->timestamps('create_at');
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
