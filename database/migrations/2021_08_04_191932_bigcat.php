@@ -14,7 +14,7 @@ class Bigcat extends Migration
     public function up()
     {
         Schema::create('bigcat', function (Blueprint $table) {
-            $table->id('bigcat_id');
+            $table->bigIncrements('bigcat_id',10);
             $table->string('bigcat_name',100);
             $table->string('bigcat_img',100);
             $table->boolean('bigcat_sta');

@@ -7,28 +7,28 @@ use Illuminate\Support\Facades\Schema;
 class Brand extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    * Run the migrations.
+    *
+    * @return void
+    */
     public function up()
     {
         Schema::create('brand', function (Blueprint $table) {
-            $table->id('brand_id');
+            $table->bigIncrements('brand_id',10);
             $table->string('brand_name',100);
             $table->string('brand_img',100);
             $table->boolean('brand_sta');
-            $table->index('bigcat_id');
+            $table->integer('big_cat_id',10);
             $table->timestamp('created_at')->useCurrent();
-            $table->foreign('bigcat_id')->references('bigcat_id')->on('bigcat')->onDelete('cascade');
+            $table->foreign('big_cat_id')->references('bigcat_id')->on('bigcat');
         });
     }
-
+    
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::dropIfExists('brand');
