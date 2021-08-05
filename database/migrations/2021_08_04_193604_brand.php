@@ -14,11 +14,11 @@ class Brand extends Migration
     public function up()
     {
         Schema::create('brand', function (Blueprint $table) {
-            $table->bigIncrements('brand_id',10);
+            $table->bigIncrements('brand_id');
             $table->string('brand_name',100);
-            $table->string('brand_img',100);
+            $table->string('brand_img',200);
             $table->boolean('brand_sta');
-            $table->integer('big_cat_id',10);
+            $table->unsignedBigInteger('big_cat_id');
             $table->timestamp('created_at')->useCurrent();
             $table->foreign('big_cat_id')->references('bigcat_id')->on('bigcat');
         });
