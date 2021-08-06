@@ -16,6 +16,12 @@ class Address extends Migration
         Schema::create('address', function (Blueprint $table) {
             $table->bigIncrements('cos_address_id');
             $table->unsignedBigInteger('cos_id');
+            $table->string('country');
+            $table->string('city');
+            $table->string('Street_name');
+            $table->string('x_coordinate');
+            $table->string('y_coordinate');
+            $table->timestamp('created_at')->useCurrent();
         });
     }
     
