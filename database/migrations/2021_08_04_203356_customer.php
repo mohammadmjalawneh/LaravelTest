@@ -23,6 +23,7 @@ class Customer extends Migration
             $table->unsignedBigInteger('cos_address_id');
             $table->timestamp('created_at')->useCurrent();
             $table->foreign('customer_name_id')->references('customer_name_id')->on('customer_name');
+            $table->foreign('cos_address_id')->references('cos_address_id')->on('address');
         });
     }
     
