@@ -13,7 +13,7 @@ class AdminPrivileges extends Migration
     */
     public function up()
     {
-        Schema::create('AdminPrivileges', function (Blueprint $table) {
+        Schema::create('Admin_Privileges', function (Blueprint $table) {
             $table->unsignedBigInteger('admin_id');
             $table->string('admin_privileges_id');
             $table->timestamp('created_at')->useCurrent();
