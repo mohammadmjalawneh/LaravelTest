@@ -11,7 +11,7 @@ class Subcategory extends Migration
     *
     * @return void
     */
-    public function up()
+    public function up()           
     {
         Schema::create('Subcategory', function (Blueprint $table) {
             $table->bigIncrements('subcategory_id');
