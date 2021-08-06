@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Schema;
 class Bigcat extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    * Run the migrations.
+    *
+    * @return void
+    */
     public function up()
     {
         Schema::create('bigcat', function (Blueprint $table) {
@@ -21,12 +21,12 @@ class Bigcat extends Migration
             $table->timestamp('created_at')->useCurrent();
         });
     }
-
+    
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::dropIfExists('bigcat');

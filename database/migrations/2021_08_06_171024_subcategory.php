@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Schema;
 class Subcategory extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    * Run the migrations.
+    *
+    * @return void
+    */
     public function up()
     {
         Schema::create('Subcategory', function (Blueprint $table) {
@@ -18,15 +18,16 @@ class Subcategory extends Migration
             $table->string('subcategory_name');
             $table->boolean('subcategory_statuse');
             $table->unsignedBigInteger('big_cat_id');
+            $table->timestamp('created_at')->useCurrent();
             $table->foreign('big_cat_id')->references('bigcat_id')->on('bigcat');
         });
     }
-
+    
     /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    * Reverse the migrations.
+    *
+    * @return void
+    */
     public function down()
     {
         Schema::dropIfExists('Subcategory');

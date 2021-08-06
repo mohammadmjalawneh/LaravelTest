@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CustomerName extends Migration
+class AdminPrivileges extends Migration
 {
     /**
     * Run the migrations.
@@ -13,12 +13,11 @@ class CustomerName extends Migration
     */
     public function up()
     {
-        Schema::create('customer_name', function (Blueprint $table) {
-            $table->bigIncrements('customer_name_id');
-            $table->string('customer_first_name');
-            $table->string('customer_mid_name');
-            $table->string('customer_last_name');
+        Schema::create('AdminPrivileges', function (Blueprint $table) {
+            $table->unsignedBigInteger('admin_id');
+            $table->string('admin_privileges_id');
             $table->timestamp('created_at')->useCurrent();
+            $table->foreign('admin_id')->references('admin_id')->on('admin');
         });
     }
     
@@ -29,6 +28,6 @@ class CustomerName extends Migration
     */
     public function down()
     {
-        Schema::dropIfExists('customer_name');
+        //
     }
 }
