@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Bigcat extends Migration
+class ProductImg extends Migration
 {
     /**
     * Run the migrations.
@@ -13,12 +13,11 @@ class Bigcat extends Migration
     */
     public function up()
     {
-        Schema::create('bigcat', function (Blueprint $table) {
-            $table->bigIncrements('bigcat_id',10);
-            $table->string('bigcat_name',100);
-            $table->string('bigcat_img_URL',300);
-            $table->boolean('bigcat_sta');
+        Schema::create('product_img', function (Blueprint $table) {
+            $table->unsignedBigInteger('product_id');
+            $table->string('product_img_URL',300);
             $table->timestamp('created_at')->useCurrent();
+            $table->foreign('product_id')->references('product_id')->on('product');
         });
     }
     
@@ -29,6 +28,6 @@ class Bigcat extends Migration
     */
     public function down()
     {
-        Schema::dropIfExists('bigcat');
+        Schema::dropIfExists('product_img');
     }
 }
