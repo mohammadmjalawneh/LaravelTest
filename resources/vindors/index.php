@@ -23,7 +23,7 @@ if (isset($_POST['update'])) {
     header("Location:index.php");
 }
 $SI=new DBO();
-$S=$SI->get_cat($vi['bigcat_id']);
+$S=$SI->get_cat($vi['big_cat_id']);
 include_once 'included/header.php';
 include_once 'included/connect.php';
 ?>
@@ -39,7 +39,7 @@ include_once 'included/connect.php';
                         <h3 class="card-title">Vindor Address:<?php echo ' '.$vi['vin_address'];?></h3>
                         <h3 class="card-title">Vindor mobile:<?php echo ' '.$vi['vin_mobile'];?></h3>
                         <h3 class="card-title">Vindor date:<?php echo ' '.$vi['vin_sdate'];?></h3>
-                        <h3 class="card-title">Vindor category:<?php echo ' '.$S['bigcat_name'];?></h3>
+                        <h3 class="card-title">Vindor category:<?php echo ' '.$S['big_cat_name'];?></h3>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ class Subcategory extends Migration
             $table->boolean('subcategory_statuse');
             $table->unsignedBigInteger('big_cat_id');
             $table->timestamp('created_at')->useCurrent();
-            $table->foreign('big_cat_id')->references('bigcat_id')->on('bigcat');
+            $table->foreign('big_cat_id')->references('big_cat_id')->on('big_cat');
         });
     }
     

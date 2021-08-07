@@ -38,13 +38,13 @@ if (isset($_POST['Editproduct'])) {
 			$res=mysqli_query($connect,$Que);
 		}
 	}
-	$DS=$ED->updpro($_POST['name'],$_POST['desc'],$_POST['price'],$_POST['description'],$_POST['qty'],$_POST['brand'],$cat['bigcat_id'],$_GET['Eid']);
+	$DS=$ED->updpro($_POST['name'],$_POST['desc'],$_POST['price'],$_POST['description'],$_POST['qty'],$_POST['brand'],$cat['big_cat_id'],$_GET['Eid']);
 }
 if (isset($_POST['Addproduct'])) {
 	$add=new DBO();$DE=new DBO();
 	$get1=new DBO();
-	$add->storepro($_POST['name'],$_POST['description'],$_POST['price'],$_POST['decs'],$_POST['qty'],$_POST['brand'],$cat['bigcat_id'],$_POST['subcat'],$_SESSION['vid']);
-	$get=$get1->getpro($_POST['name'],$_POST['description'],$_POST['decs'],$_POST['brand'],$cat['bigcat_id'],$_POST['subcat'],$_SESSION['vid']);
+	$add->storepro($_POST['name'],$_POST['description'],$_POST['price'],$_POST['decs'],$_POST['qty'],$_POST['brand'],$cat['big_cat_id'],$_POST['subcat'],$_SESSION['vid']);
+	$get=$get1->getpro($_POST['name'],$_POST['description'],$_POST['decs'],$_POST['brand'],$cat['big_cat_id'],$_POST['subcat'],$_SESSION['vid']);
 	if(!empty(array_filter($_FILES['files']['name']))) { 
 		foreach ($_FILES['files']['tmp_name'] as $key => $value) { 	
 			$temp = $_FILES['files']['tmp_name'][$key]; 
@@ -115,10 +115,10 @@ include_once 'included/header.php'; ?>
 								<label class="col-12 col-sm-3 col-form-label text-sm-right">product Category</label>
 								<div class="col-12 col-sm-8 col-lg-6">
 									<label class="form-control"><?php
-										$Se="SELECT * FROM bigcat WHERE bigcat_id=".$cat['bigcat_id'];
+										$Se="SELECT * FROM big_cat WHERE big_cat_id=".$cat['big_cat_id'];
 										$res=mysqli_query($connect,$Se);
 										$catname=mysqli_fetch_assoc($res);
-										echo $catname['bigcat_name'];
+										echo $catname['big_cat_name'];
 										?>
 										
 									</label>
@@ -130,13 +130,13 @@ include_once 'included/header.php'; ?>
 									<select name="subcat" id="subcat" class="form-control" required="">
 										<?php
 										if (isset($_GET['Eid'])) {
-										$Que="SELECT * FROM subcat where bigcat_id=".$product['bigcat_id'];
+										$Que="SELECT * FROM subcat where big_cat_id=".$product['big_cat_id'];
 										$vio=mysqli_query($connect,$Que);
 										$bra1=mysqli_fetch_assoc($vio);
 											echo "<option value='{$bra['subcat_id']}'>".$bra1['subcat_name']."</option>";
 										}
 										echo "<option value=''>Select Subcat</option>";
-										$Que="SELECT * FROM subcat where bigcat_id=".$cat['bigcat_id'];
+										$Que="SELECT * FROM subcat where big_cat_id=".$cat['big_cat_id'];
 										$vio=mysqli_query($connect,$Que);
 										while ($bra=mysqli_fetch_assoc($vio)) {
 											echo "<option value='{$bra['subcat_id']}'>".$bra['subcat_name']."</option>";
@@ -157,7 +157,7 @@ include_once 'included/header.php'; ?>
 												echo "<option value='{$bra['br_id']}'>".$bra1['br_name']."</option>";
 										}
 										echo "<option value=''>Select brand</option>";
-										$Que="SELECT * FROM brand where bigcat_id=".$cat['bigcat_id'];
+										$Que="SELECT * FROM brand where big_cat_id=".$cat['big_cat_id'];
 										$vio=mysqli_query($connect,$Que);
 										while ($bra=mysqli_fetch_assoc($vio)) {
 											echo "<option value='{$bra['br_id']}'>".$bra['br_name']."</option>";
@@ -268,10 +268,10 @@ include_once 'included/header.php'; ?>
 									while ($pro=$res->fetch_assoc()) {
 										echo "<td>".$pro['pro_name']."</td>";
 										echo "<td>".$pro['pro_desc']."</td>";
-										$cef="SELECT * FROM bigcat WHERE bigcat_id=".$pro['bigcat_id'];
+										$cef="SELECT * FROM big_cat WHERE big_cat_id=".$pro['big_cat_id'];
 										$cf=mysqli_query($connect,$cef);
 										$cat=$cf->fetch_assoc();
-										echo "<td>".$cat['bigcat_name']."</td>";
+										echo "<td>".$cat['big_cat_name']."</td>";
 										echo "<td>".$pro['pro_price']."</td>";
 										echo "<td>".$pro['pro_descount']."</td>";
 										$SubQue="SELECT * FROM subcat WHERE subcat_id=".$pro['subcat_id'];

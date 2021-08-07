@@ -50,18 +50,18 @@ class DBO
 		$Que="UPDATE vindor SET vin_fname = '".$fname."', vin_mname = '".$mname."', vin_lname = '".$lname."', vin_pass = '".$pass."', vin_email = '".$email."', vin_mobile = '".$mobile."', vin_img = '".$img."', vin_address = '".$address."', vin_status = '".$sta."'WHERE vin_id =".$id;
 		$res=mysqli_query($this->conn,$Que);
 	}
-	public function getpro($name,$desc,$decs,$br_id,$bigcat_id,$subcat_id,$vin_id){
-		$Que='SELECT pro_id FROM product where pro_name="'.$name.'"AND pro_desc="'.$desc.'" AND br_id='.$br_id.' AND bigcat_id='.$bigcat_id.' AND subcat_id='.$subcat_id.' AND vin_id='.$vin_id;
+	public function getpro($name,$desc,$decs,$br_id,$big_cat_id,$subcat_id,$vin_id){
+		$Que='SELECT pro_id FROM product where pro_name="'.$name.'"AND pro_desc="'.$desc.'" AND br_id='.$br_id.' AND big_cat_id='.$big_cat_id.' AND subcat_id='.$subcat_id.' AND vin_id='.$vin_id;
 		$res=mysqli_query($this->conn,$Que);
 		$pro_id=mysqli_fetch_assoc($res);
 		return $pro_id['pro_id'];	
 	}
-	public function updpro($name,$desc,$price,$dess,$qty,$br_id,$bigcat_id,$pro_id){
-		$Que='UPDATE product SET pro_name = "$name", pro_desc ="'.$desc.'", pro_price = "$price", pro_descount = "$dess", pro_qty = $qty, br_id = $br_id, bigcat_id = $bigcat_id WHERE pro_id ='.$pro_id;
+	public function updpro($name,$desc,$price,$dess,$qty,$br_id,$big_cat_id,$pro_id){
+		$Que='UPDATE product SET pro_name = "$name", pro_desc ="'.$desc.'", pro_price = "$price", pro_descount = "$dess", pro_qty = $qty, br_id = $br_id, big_cat_id = $big_cat_id WHERE pro_id ='.$pro_id;
 		$res=mysqli_query($this->conn,$Que);
 	}
-	public function storepro($name,$desc,$price,$decs,$qty,$br_id,$bigcat_id,$subcat_id,$vin_id){
-		$Que='INSERT INTO product (pro_name, pro_desc, pro_price, pro_descount, pro_qty, br_id, bigcat_id, subcat_id, vin_id, pro_sta) VALUES ("'.$name.'", "'.$desc.'", '.$price.', "'.$decs.'", '.$qty.', '.$br_id.', '.$bigcat_id.', '.$subcat_id.', '.$vin_id.', "1")';
+	public function storepro($name,$desc,$price,$decs,$qty,$br_id,$big_cat_id,$subcat_id,$vin_id){
+		$Que='INSERT INTO product (pro_name, pro_desc, pro_price, pro_descount, pro_qty, br_id, big_cat_id, subcat_id, vin_id, pro_sta) VALUES ("'.$name.'", "'.$desc.'", '.$price.', "'.$decs.'", '.$qty.', '.$br_id.', '.$big_cat_id.', '.$subcat_id.', '.$vin_id.', "1")';
 		$res=mysqli_query($this->conn,$Que);
 	}
 	public function storeimg($id,$img){
@@ -73,7 +73,7 @@ class DBO
 		$res=mysqli_query($this->conn,$Que);
 	}
 	public function get_cat($id){
-		$Que="SELECT * from bigcat where bigcat_id=".$id;
+		$Que="SELECT * from big_cat where big_cat_id=".$id;
 		$res=mysqli_query($this->conn,$Que);
 		$C=$res->fetch_assoc();
 		return $C;

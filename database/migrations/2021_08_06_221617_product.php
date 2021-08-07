@@ -19,11 +19,11 @@ class Product extends Migration
             $table->string('product_description');
             $table->integer('product_quantity');
             $table->double('product_price', 8, 6);
-            $table->unsignedBigInteger('bigcat_id');
+            $table->unsignedBigInteger('big_cat_id');
             $table->unsignedBigInteger('subcategory_id');
             $table->unsignedBigInteger('brand_id');
             $table->timestamp('created_at')->useCurrent();
-            $table->foreign('bigcat_id')->references('bigcat_id')->on('bigcat');
+            $table->foreign('big_cat_id')->references('big_cat_id')->on('big_cat');
             $table->foreign('subcategory_id')->references('subcategory_id')->on('subcategory');
             $table->foreign('brand_id')->references('brand_id')->on('brand');
         });
