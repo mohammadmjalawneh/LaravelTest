@@ -25,16 +25,14 @@
     <section class="feature_part pt-4">
         <div class="container-fluid p-lg-0 overflow-hidden">
             <div class="row align-items-center justify-content-between">
-                @foreach ($Categories as $Caregoris)
-                    <div class='col-lg-4 col-sm-6 mt-3'>
-                        <div class='single_feature_post_text'>
-                            <img src='img/category/{{}}' style='height: 550px;' alt=''>
-                            <div class='hover_text'>
-                                <a href='' class='btn_2'>shop for</a>
-                            </div>
+                <div class='col-lg-4 col-sm-6 mt-3'>
+                    <div class='single_feature_post_text'>
+                        <img src='img/category/{{}}' style='height: 550px;' alt=''>
+                        <div class='hover_text'>
+                            <a href='' class='btn_2'>shop for</a>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </section>
