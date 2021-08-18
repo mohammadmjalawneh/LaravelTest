@@ -31,6 +31,6 @@ class OrderDetails extends Migration
     */
     public function down()
     {
-        //
+        Schema::dropIfExists('orders');
     }
 }

@@ -16,8 +16,6 @@ class Order extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('order_id');
             $table->unsignedBigInteger('customer_id');
-            $table->integer('quantity');
-            $table->double('order_price',8,6);
             $table->timestamp('created_at')->useCurrent();
             $table->foreign('customer_id')->references('customer_id')->on('customer');
         });
@@ -30,6 +28,6 @@ class Order extends Migration
     */
     public function down()
     {
-        //
+        Schema::dropIfExists('orders');
     }
 }

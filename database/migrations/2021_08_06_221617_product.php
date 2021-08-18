@@ -18,7 +18,7 @@ class Product extends Migration
             $table->string('product_name');
             $table->string('product_description');
             $table->integer('product_quantity');
-            $table->double('product_price', 8, 6);
+            $table->double('product_price',8,6);    
             $table->unsignedBigInteger('big_cat_id');
             $table->unsignedBigInteger('subcategory_id');
             $table->unsignedBigInteger('brand_id');
