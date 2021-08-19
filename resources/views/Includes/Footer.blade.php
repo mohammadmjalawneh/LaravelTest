@@ -166,3 +166,5 @@
 <script src="js/stellar.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/waypoints.min.js"></script>
+
+</html>
