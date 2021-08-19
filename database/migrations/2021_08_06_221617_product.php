@@ -16,6 +16,7 @@ class Product extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('product_id');
             $table->string('product_name');
+            $table->string('product_code',50);
             $table->string('product_description');
             $table->integer('product_quantity');
             $table->double('product_price',8,6);    

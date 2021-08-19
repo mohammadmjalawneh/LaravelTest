@@ -16,6 +16,7 @@ class bigcat extends Migration
         Schema::create('big_cat', function (Blueprint $table) {
             $table->bigIncrements('big_cat_id',10);
             $table->string('big_cat_name',100);
+            $table->string('big_cat_code',50);
             $table->string('big_cat_img_URL',300);
             $table->boolean('big_cat_sta');
             $table->timestamp('created_at')->useCurrent();

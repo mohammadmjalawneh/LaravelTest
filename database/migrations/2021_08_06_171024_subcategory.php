@@ -16,6 +16,7 @@ class Subcategory extends Migration
         Schema::create('Subcategory', function (Blueprint $table) {
             $table->bigIncrements('subcategory_id');
             $table->string('subcategory_name');
+            $table->string('subcategory_code',50);
             $table->boolean('subcategory_statuse');
             $table->unsignedBigInteger('big_cat_id');
             $table->timestamp('created_at')->useCurrent();
