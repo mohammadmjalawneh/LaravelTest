@@ -1,4 +1,4 @@
-@extends('Includes.Footer')
+@extends('Includes.Header')
 @section('MainSector')
 <section class="banner_part">
     <div class="container">
@@ -37,4 +37,4 @@
     </div>
 </section>
 @endsection
-@extends('Includes.Header')
+@extends('Includes.Footer')
